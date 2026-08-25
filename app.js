@@ -24,3 +24,25 @@ function showProducts() {
 }
 
 showProducts();
+
+function findProduct(productName) {
+    let foundProduct;
+
+    products.forEach(function(product) {
+        if (product.name.toLowerCase() === productName.toLowerCase()) {
+            foundProduct = product;
+        }
+    });
+
+    if (foundProduct !== undefined) {
+        console.log("Product found:", foundProduct);
+        return foundProduct;
+    } else {
+        console.log("Product not found.");
+        return undefined;
+    }
+}
+
+findProduct("Laptop");
+findProduct("Phone");
+findProduct("Tablet");
